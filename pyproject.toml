@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "tieteellinen-laskin"
+version = "0.1.0"
+description = ""
+authors = ["Soki <soki.fin02@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+coverage = "^7.6.1"
+
+
+[tool.poetry.group.dev.dependencies]
+coverage = "^7.6.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
