@@ -14,3 +14,6 @@ ja tärkeimmät ohjelmatiedostot sekä testit on luotu.
 - Tarkoituksena olisi lisätä jokin seuraavista operaatiosta sqrt(), sin(), cos() ja
 tan()
 - koodin dokumentointi
+- parempi virheilmoitus näkyviin
+
+Käytin aikaa tällä viikolla noin 15 tuntia.
