@@ -39,5 +39,23 @@ class TestEvaluatePostfix(unittest.TestCase):
         expected = 20
         self.assertEqual(result, expected)
 
-if __name__ == '__main__':
+    def test_sin(self):
+        expression = ['0', 'sin']
+        result = evaluate_postfix(expression)
+        expected = 0  
+        self.assertEqual(result, expected)
+
+    def test_cos(self):
+        expression = ['0', 'cos']
+        result = evaluate_postfix(expression)
+        expected = 1 
+        self.assertEqual(result, expected)
+
+    def test_tan(self):
+        expression = ['0', 'tan']
+        result = evaluate_postfix(expression)
+        expected = 0  
+        self.assertEqual(result, expected)
+
+if __name__ == '__main__': # pragma: no cover
     unittest.main()

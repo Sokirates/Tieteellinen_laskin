@@ -27,5 +27,29 @@ class TestShuntingYardAlgorithm(unittest.TestCase):
         expected = ['2', '3', '^', '2', '^']
         self.assertEqual(result, expected)
 
-if __name__ == '__main__':
+    def test_sqrt_function(self):
+        equation = "sqrt(9)"
+        result = shunting_yard_algorithm(equation)
+        expected = ['9', 'sqrt']
+        self.assertEqual(result, expected)
+
+    def test_sin_function(self):
+        equation = "sin(0)"
+        result = shunting_yard_algorithm(equation)
+        expected = ['0', 'sin']
+        self.assertEqual(result, expected)
+
+    def test_cos_function(self):
+        equation = "cos(0)"
+        result = shunting_yard_algorithm(equation)
+        expected = ['0', 'cos']
+        self.assertEqual(result, expected)
+
+    def test_tan_function(self):
+        equation = "tan(0)"
+        result = shunting_yard_algorithm(equation)
+        expected = ['0', 'tan']
+        self.assertEqual(result, expected)
+
+if __name__ == '__main__': # pragma: no cover
     unittest.main()
