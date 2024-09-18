@@ -9,6 +9,15 @@ def evaluate_postfix(expression):
         elif token == 'sqrt':
             val = stack.pop()
             stack.append(math.sqrt(val))
+        elif token == 'sin':
+            val = stack.pop()
+            stack.append(math.sin(val))
+        elif token == 'cos':
+            val = stack.pop()
+            stack.append(math.cos(val))
+        elif token == 'tan':
+            val = stack.pop()
+            stack.append(math.tan(val)) 
         else:
             val2 = stack.pop()
             val1 = stack.pop()
