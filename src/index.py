@@ -1,7 +1,7 @@
 from shunting_yard import shunting_yard_algorithm
 from evaluate_postfix import evaluate_postfix
 
-while True:
+while True: # pragma: no cover
     equation = input("Kirjoita yhtälö ('exit' lopettaa): ")
     
     if equation.lower() == "exit":
