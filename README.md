@@ -5,4 +5,6 @@
 
 - [viikkoraportti 2](https://github.com/Sokirates/Tieteellinen_laskin/blob/main/dokumentaatio/viikkoraportit/viikko2.md)
 
+- [viikkoraportti_3](https://github.com/Sokirates/Tieteellinen_laskin/blob/main/dokumentaatio/viikkoraportit/viikko3.md)
+
 - [Määrittelydokumentti](https://github.com/Sokirates/Tieteellinen_laskin/blob/main/dokumentaatio/maarittelydokumentti.md)
