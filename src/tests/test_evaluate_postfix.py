@@ -39,6 +39,12 @@ class TestEvaluatePostfix(unittest.TestCase):
         expected = 20
         self.assertEqual(result, expected)
 
+    def test_sqrt(self):
+        expression = ['9', 'sqrt']
+        result = evaluate_postfix(expression)
+        expected = 3
+        self.assertEqual(result, expected)
+
     def test_sin(self):
         expression = ['0', 'sin']
         result = evaluate_postfix(expression)
@@ -87,6 +93,11 @@ class TestEvaluatePostfix(unittest.TestCase):
         with self.assertRaises(ValueError) as context:
             evaluate_postfix(expression)
         self.assertEqual(str(context.exception), "Virhe: Tyhjentämättömiä arvoja pinossa.")
+
+    def test_empty_stack_pop(self):
+        with self.assertRaises(ValueError) as context:
+            evaluate_postfix(['+', '3'])
+        self.assertEqual(str(context.exception), "Virhe: Yritettiin poistaa arvoja tyhjältä pinolta.")
 
 if __name__ == '__main__': # pragma: no cover
     unittest.main()
