@@ -15,8 +15,6 @@ def shunting_yard_algorithm(equation):
             open_parens += 1
         elif char == ')':
             open_parens -= 1
-        if open_parens < 0:
-            raise ValueError("Sulkeet eivät ole tasapainossa.")
     if open_parens != 0:
         raise ValueError("Sulkeet eivät ole tasapainossa.")
 
