@@ -1,9 +1,30 @@
 import re
 
 def is_number(token):
+    """
+    Check if the given token is a valid number.
+
+    Parameters:
+    token (str)
+
+    Returns:
+    valid number if the token is a valid number
+    otherwise return None
+    """
     return re.match(r"^-?\d+(\.\d+)?$", token)
 
 def shunting_yard_algorithm(equation):
+    """
+    Convert a mathematical equation into postfix notation
+    using the Shunting Yard algorithm.
+
+    Parameters: 
+        equation:   A string representation of a mathematical expression in infix notation.
+            Supported operators: +, -, *, /, ^, as well as the functions sqrt, sin, cos, and tan.
+
+    Returns:
+    list: A list of tokens representing the mathematical expression in postfix notation.
+    """
     tokens = re.findall(r'\d+|[+*/^()-]|sqrt|sin|cos|tan', equation)
 
     if ''.join(tokens) != equation.replace(' ', ''):
