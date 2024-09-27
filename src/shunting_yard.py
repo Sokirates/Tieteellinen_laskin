@@ -6,6 +6,20 @@ def is_number(token):
 def shunting_yard_algorithm(equation):
     tokens = re.findall(r'\d+|[+*/^()-]|sqrt|sin|cos|tan', equation)
 
+    if ''.join(tokens) != equation.replace(' ', ''):
+        raise ValueError("Syötteessä on virheellisiä merkkejä.")
+
+    open_parens = 0
+    for char in equation:
+        if char == '(':
+            open_parens += 1
+        elif char == ')':
+            open_parens -= 1
+        if open_parens < 0:
+            raise ValueError("Sulkeet eivät ole tasapainossa.")
+    if open_parens != 0:
+        raise ValueError("Sulkeet eivät ole tasapainossa.")
+
     operators_precedence = {"+": 1, "-": 1, "*": 2, "/": 2, "^": 3}
     
     holding_stack = []
