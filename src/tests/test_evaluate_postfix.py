@@ -57,5 +57,36 @@ class TestEvaluatePostfix(unittest.TestCase):
         expected = 0  
         self.assertEqual(result, expected)
 
+    def test_no_values_for_sqrt(self):
+        expression = ['sqrt']
+        with self.assertRaises(ValueError) as context:
+            evaluate_postfix(expression)
+        self.assertEqual(str(context.exception), "Virhe: Yritettiin poistaa arvo tyhjältä pinolta.")
+
+
+    def test_no_values_for_sin(self):
+        expression = ['sin']
+        with self.assertRaises(ValueError) as context:
+            evaluate_postfix(expression)
+        self.assertEqual(str(context.exception), "Virhe: Yritettiin poistaa arvo tyhjältä pinolta.")
+
+    def test_too_few_values_for_cos(self):
+        expression = ['cos']  
+        with self.assertRaises(ValueError) as context:
+            evaluate_postfix(expression)
+        self.assertEqual(str(context.exception), "Virhe: Yritettiin poistaa arvo tyhjältä pinolta.")
+
+    def test_too_few_values_for_tan(self):
+        expression = ['tan']  
+        with self.assertRaises(ValueError) as context:
+            evaluate_postfix(expression)
+        self.assertEqual(str(context.exception), "Virhe: Yritettiin poistaa arvo tyhjältä pinolta.")
+
+    def test_no_values(self):
+        expression = []  
+        with self.assertRaises(ValueError) as context:
+            evaluate_postfix(expression)
+        self.assertEqual(str(context.exception), "Virhe: Tyhjentämättömiä arvoja pinossa.")
+
 if __name__ == '__main__': # pragma: no cover
     unittest.main()
