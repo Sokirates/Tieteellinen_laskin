@@ -1,0 +1,15 @@
+Vertaisarviointi (5.10.2024 klo 21.30)
+
+Projekti on toteutettu huolellisesti ja koodi on selkeää sekä helposti seurattavaa. Ohjelman rakenne on looginen ja jakautuu järkevästi eri osioihin, mikä tekee sen ymmärtämisestä helppoa.
+
+Testit toimivat hyvin ja kaikki yksikkötestit menevät läpi. Suoritin kattavuusraportin coverage-työkalua käyttäen, ja sain tulokseksi 80% kattavuuden.
+
+Coverage on helppokäyttöinen työkalu, joka auttaa havaitsemaan testaamattomat osiot. Suosittelen sen integroimista osaksi projektin jatkuvaa testausprosessia.
+
+Testatessani peliä huomasin, että kun peliin annetaan syötteeksi esimerkiksi "kivi, paperi, kivi, paperi...", joka toisella kerralla pelaaja voittaa ja joka toisella tulee tasapeli.
+
+Kysymyksenä heräsi, onko mahdollista, että ohjelma tallentaa enemmän kuin 4 viimeistä siirtoa pelaajan historiasta.
+
+Testitiedostossa oli kirjoitusvirhe rivillä 10, jossa luki "vastaab".
+
+Yhteenvetona projekti vaikuttaa erittäin lupaavalta ja hyvin toteutetulta. Peli toimii odotetusti ja logiikka tekoälyn päätöksenteon taustalla on kiinnostava.
