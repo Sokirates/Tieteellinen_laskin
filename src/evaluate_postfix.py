@@ -1,6 +1,19 @@
 import math
 
 def evaluate_postfix(expression):
+    """
+    Evaluates a mathematical expression in postfix notation.
+
+    This function processes a list of tokens that form a valid postfix expression. 
+    It supports basic arithmetic operations (`+`, `-`, `*`, `/`, `^`), as well as 
+    several mathematical functions (`sqrt`, `sin`, `cos`, `tan`).
+
+    Args:
+        expression (list of str): The postfix expression as a list of tokens
+
+    Returns:
+        float: The result of the evaluated expression
+    """
     stack = []
 
     for token in expression:
