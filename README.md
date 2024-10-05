@@ -10,7 +10,7 @@
 
 - [viikkoraportti 4](https://github.com/Sokirates/Tieteellinen_laskin/blob/main/dokumentaatio/viikkoraportit/viikko4.md)
 
-- [viikkoraportti 5](https://github.com/Sokirates/Tieteellinen_laskin/tree/main/dokumentaatio/viikkoraportit)
+- [viikkoraportti 5](https://github.com/Sokirates/Tieteellinen_laskin/blob/main/dokumentaatio/viikkoraportit/viikko5.md)
 
 - [Määrittelydokumentti](https://github.com/Sokirates/Tieteellinen_laskin/blob/main/dokumentaatio/maarittelydokumentti.md)
 
