@@ -1,4 +1,9 @@
 import math
+import re
+
+def is_number(token):
+    """Check if the token is a valid number (integer or float)."""
+    return re.match(r"^-?\d+(\.\d+)?$", token)
 
 def evaluate_postfix(expression):
     """
@@ -17,8 +22,8 @@ def evaluate_postfix(expression):
     stack = []
 
     for token in expression:
-        if token.isdigit():
-            stack.append(int(token))
+        if is_number(token):
+            stack.append(float(token))
         elif token == 'sqrt':
             if not stack:
                 raise ValueError("Virhe: Yritettiin poistaa arvo tyhjältä pinolta.")
@@ -52,6 +57,8 @@ def evaluate_postfix(expression):
             elif token == '*':
                 stack.append(val1 * val2)
             elif token == '/':
+                if val2 == 0:
+                    raise ValueError("Virhe: Nollalla jakaminen.")
                 stack.append(val1 / val2)
             elif token == '^':
                 stack.append(val1 ** val2)
