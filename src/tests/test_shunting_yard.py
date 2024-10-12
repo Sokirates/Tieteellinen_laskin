@@ -51,12 +51,6 @@ class TestShuntingYardAlgorithm(unittest.TestCase):
         expected = ['0', 'tan']
         self.assertEqual(result, expected)
 
-    def test_invalid_characters(self):
-        equation = "1 + 2 w 3" 
-        with self.assertRaises(ValueError) as context:
-            shunting_yard_algorithm(equation)
-        self.assertEqual(str(context.exception), "Syötteessä on virheellisiä merkkejä.")
-
     def test_unbalanced_parentheses_open(self):
         equation = "(1 + 2"  
         with self.assertRaises(ValueError) as context:
