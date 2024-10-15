@@ -1,24 +1,34 @@
 import unittest
-from variable_manager import define_variable
+from variable_manager import define_variable, variables
 
-variables = {}
+class TestVariableManager(unittest.TestCase):
 
-class TestDefineVariable(unittest.TestCase):
     def setUp(self):
-        # Tyhjennetään muuttujat jokaisen testin alussa
-        global variables
-        variables.clear()  # Käytä clear() metodia tyhjentämiseen
+        variables.clear()
+
+    def test_define_variable_success(self):
+        define_variable('x', 10)
+        self.assertEqual(variables['x'], 10)
+
+    def test_define_variable_float(self):
+        define_variable('y', 3.14)
+        self.assertEqual(variables['y'], 3.14)
 
     def test_define_variable_invalid_name(self):
-        # Testaa virheelliset muuttujan nimet
-        with self.assertRaises(ValueError):
-            define_variable("xy", 5)  # Nimen tulee olla yksi kirjain
+        with self.assertRaises(ValueError) as context:
+            define_variable('xy', 10)
+        self.assertEqual(str(context.exception), "Muuttujan nimen tulee olla vain yksi kirjain.")
+    
+    def test_define_variable_invalid_name_not_alpha(self):
+        with self.assertRaises(ValueError) as context:
+            define_variable('1', 10)
+        self.assertEqual(str(context.exception), "Muuttujan nimen tulee olla vain yksi kirjain.")
+    
+    def test_define_variable_invalid_value(self):
+        with self.assertRaises(ValueError) as context:
+            define_variable('x', 'abc')
+        self.assertEqual(str(context.exception), "Anna kelvollinen numero muuttujan arvoksi.")
 
-        with self.assertRaises(ValueError):
-            define_variable("1", 5)  # Nimen tulee olla kirjain
-
-        with self.assertRaises(ValueError):
-            define_variable("", 5)  # Nimen tulee olla vähintään yksi kirjain
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()
+
