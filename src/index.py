@@ -37,10 +37,24 @@ while True:  # pragma: no cover
 
     try:
         output = shunting_yard_algorithm(equation)
-        print(f"Postfix-muoto: {output}")
         
-        output = [str(get_variable(token)) if token in list_variables() else token for token in output]
-        print(f"Postfix-muoto: {output}")
+        contains_variables = any(token.isalpha() and token in list_variables() for token in output)
+        
+        if not contains_variables:
+            print(f"Postfix-muoto: {output}")
+        else:
+            new_output = []
+            for token in output:
+                if token.isalpha() and len(token) == 1:
+                    if token in list_variables():
+                        new_output.append(str(get_variable(token)))
+                    else:
+                        raise ValueError(f"Muuttujaa '{token}' ei ole määritelty.")
+                else:
+                    new_output.append(token)
+            print(f"Postfix-muoto: {output}")
+            print(f"Postfix-muoto muuttujien arvoilla: {new_output}")
+            output = new_output  
 
         result = evaluate_postfix(output)
         print(f"Tulos: {result}")
@@ -59,3 +73,4 @@ while True:  # pragma: no cover
         print(f"Syötteessä virhe: {ve}")
     except Exception as e:
         print(f"Virhe: {e}")
+
