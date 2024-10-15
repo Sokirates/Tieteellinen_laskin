@@ -28,6 +28,8 @@ def evaluate_postfix(expression):
             if not stack:
                 raise ValueError("Virhe: Yritettiin poistaa arvo tyhjältä pinolta.")
             val = stack.pop()
+            if val < 0:
+                raise ValueError("Virhe: Neliöjuuri ei voi olla negatiivinen.")
             stack.append(math.sqrt(val))
         elif token == 'sin':
             if not stack:
@@ -45,23 +47,26 @@ def evaluate_postfix(expression):
             val = stack.pop()
             stack.append(math.tan(val)) 
         else:
-            if len(stack) < 2:
-                raise ValueError("Virhe: Yritettiin poistaa arvoja tyhjältä pinolta.")
-            val2 = stack.pop()
-            val1 = stack.pop()
+            if token in ('+', '-', '*', '/', '^'):
+                if len(stack) < 2:
+                    raise ValueError("Virhe: Yritettiin poistaa arvoja tyhjältä pinolta.")
+                val2 = stack.pop()
+                val1 = stack.pop()
 
-            if token == '+':
-                stack.append(val1 + val2)
-            elif token == '-':
-                stack.append(val1 - val2)
-            elif token == '*':
-                stack.append(val1 * val2)
-            elif token == '/':
-                if val2 == 0:
-                    raise ValueError("Virhe: Nollalla jakaminen.")
-                stack.append(val1 / val2)
-            elif token == '^':
-                stack.append(val1 ** val2)
+                if token == '+':
+                    stack.append(val1 + val2)
+                elif token == '-':
+                    stack.append(val1 - val2)
+                elif token == '*':
+                    stack.append(val1 * val2)
+                elif token == '/':
+                    if val2 == 0:
+                        raise ValueError("Virhe: Nollalla jakaminen.")
+                    stack.append(val1 / val2)
+                elif token == '^':
+                    stack.append(val1 ** val2)
+            else:
+                raise ValueError(f"Muuttujaa '{token}' ei ole määritelty.")
 
     if len(stack) != 1:
         raise ValueError("Virhe: Tyhjentämättömiä arvoja pinossa.")
