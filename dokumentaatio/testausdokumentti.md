@@ -13,6 +13,15 @@ että ohjelma toimii oikein keskeisten funktioiden ja luokkien toimintaa eri sy�
 
 ## Testien suoritus
 
+Poetry-ympäristöön siirtyminen:
+```bash
+poetry shell
+```
+Testien suoritus:
+```bash
+pytest
+```
+Testikattavuusraportin generointi:
 ```bash
 poetry run coverage run --branch -m pytest src; coverage html
 ```
