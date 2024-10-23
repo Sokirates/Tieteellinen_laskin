@@ -2,6 +2,8 @@
 ![GHA workflow badge](https://github.com/Sokirates/Tieteellinen_laskin/actions/workflows/main.yml/badge.svg)
 
 ## Dokumentaatiot:
+- [Käyttöohje](https://github.com/Sokirates/Tieteellinen_laskin/tree/main/dokumentaatio)
+  
 - [viikkoraportti 1](https://github.com/Sokirates/Tieteellinen_laskin/blob/main/dokumentaatio/viikkoraportit/viikko1.md)
 
 - [viikkoraportti 2](https://github.com/Sokirates/Tieteellinen_laskin/blob/main/dokumentaatio/viikkoraportit/viikko2.md)
