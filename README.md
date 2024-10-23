@@ -17,3 +17,5 @@
 - [Määrittelydokumentti](https://github.com/Sokirates/Tieteellinen_laskin/blob/main/dokumentaatio/maarittelydokumentti.md)
 
 - [Toteutusdokumentti](https://github.com/Sokirates/Tieteellinen_laskin/blob/main/dokumentaatio/toteusdokumentti.md)
+
+- [Testausdokumentti](https://github.com/Sokirates/Tieteellinen_laskin/blob/main/dokumentaatio/testausdokumentti.md)
